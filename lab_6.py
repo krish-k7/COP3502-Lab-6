@@ -1,3 +1,5 @@
+# Krish Kapadia
+
 def encode(passwd):
     return ''.join([str(int(char) + 3) for char in passwd])
 
