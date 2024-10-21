@@ -1,7 +1,7 @@
 # Krish Kapadia
 
 def encode(passwd):
-    return ''.join([str(int(char) + 3) for char in passwd])
+    return ''.join([str((int(char) + 3) % 10) for char in passwd])
 
 
 def menu():
