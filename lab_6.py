@@ -4,6 +4,15 @@ def encode(passwd):
     return ''.join([str((int(char) + 3) % 10) for char in passwd])
 
 
+def decode(stored_passwd):
+    decoded_pass = ''
+
+    for digit in stored_passwd:
+        decoded_digit = (int(digit) - 3) % 10
+        decoded_pass += str(decoded_digit)
+    return decoded_pass
+
+
 def menu():
     print(
         'Menu',
@@ -30,8 +39,9 @@ def main():
                 stored_passwd = encode(passwd)
                 print('Your password has been encoded and stored!')
             case 2:
-                # Decode implementation goes here
-                pass
+                decoded_passwd = decode(stored_passwd)
+                print(f'The encoded password is {stored_passwd}, and the original password is {decoded_passwd}.')
+                print(' ')
             case 3:
                 break
 
